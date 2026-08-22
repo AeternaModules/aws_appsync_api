@@ -1,7 +1,3 @@
-output "appsync_apis_id" {
-  description = "Map of id values across all appsync_apis, keyed the same as var.appsync_apis"
-  value       = { for k, v in aws_appsync_api.appsync_apis : k => v.id if v.id != null && length(v.id) > 0 }
-}
 output "appsync_apis_api_arn" {
   description = "Map of api_arn values across all appsync_apis, keyed the same as var.appsync_apis"
   value       = { for k, v in aws_appsync_api.appsync_apis : k => v.api_arn if v.api_arn != null && length(v.api_arn) > 0 }
